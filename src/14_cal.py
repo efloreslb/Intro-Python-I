@@ -22,3 +22,24 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+x = input("Enter month and year (MM YYYY): ").split(" ")
+
+# print(x)
+# print(*x)
+
+# for n in x:
+#   print(n)
+
+# print(len(x))
+
+try: 
+  if x == ['']:
+    print(calendar.TextCalendar().formatmonth(datetime.now().year, datetime.now().month, w=4, l=2))
+  elif len(x) == 1:
+    print(calendar.TextCalendar().formatmonth(datetime.now().year, int(x[0]), w=4, l=2))
+  elif len(x) == 2:
+    print(calendar.TextCalendar().formatmonth(int(x[1]), int(x[0]), w=4, l=2))
+except:
+  print("Please enter data in MM YYYY format")
+
